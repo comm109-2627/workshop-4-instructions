@@ -8,6 +8,14 @@ https://github.com/phil-lewis-exe/PythonCheatSheets
 
 **During the workshop try not to use any websites other than the cheat sheets - everything you need can be found there.**
 
+As you work through the tasks, and at the end of the session, remember to save your files from Codespaces (where they exist in your temporary workspace) to GitHub, using the command:
+
+```
+git_helper --commit
+```
+
+in the lower terminal panel.
+
 ---
 
 ## TASKS
