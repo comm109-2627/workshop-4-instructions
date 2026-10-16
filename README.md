@@ -33,7 +33,14 @@ def double_number(mynum):
     return mynum+2
 ```
 
-Running the file will not do anything - it is creating the function, but there is no code to call it, so nothing will actually run.
+We can run the code in the file by typing:
+
+```
+python w4_part0.py
+```
+
+In the lower panel of Codespaces. However if the file contains a function definition only, running the file will not do anything - it is creating the function, but there is no code to call it, so nothing will actually run.
+
 
 We need to add code to call the function, choosing some suitable test arguments:
 
@@ -87,7 +94,7 @@ A programmer wants to write code to calculate the percentage change between two 
 
 This can be found using the following formula:
 
-$$\texttt{percent change} = \frac{b - a}{a} \times 100$$
+$\texttt{percent change} = \frac{b - a}{a} \times 100$
 
 Write a function `percent_change` that takes two arguments `a` and `b` and returns the percent change.
 
