@@ -1,27 +1,52 @@
-# Python Week 5 Assessed Workshop
+# Python Week 4 Workshop
 
 Work in CodeSpaces. 
-
-If CodeSpaces does not load after 5 mins (like last week) open JupyterLab and add your answers to the below exercises in a single notebook.
 
 You may use the following cheat sheets if you need to look up any Python commands.
 
 https://github.com/phil-lewis-exe/PythonCheatSheets
 
-**This week you may not use any other websites to help you code.**
-
-**You must ask if you need to use a website to translate the task questions**
-
-**Mobile phones may not be used in class**
+**During the workshop try not to use any websites - everything you need can be found in the module cheat sheets.**
 
 ---
 
 ## TASKS
 
+### Part 0: Don't forget to call!
+
+When we are coding functions, we need to test if they runs using diagnostic checks. 
+
+For example if we work in file `w4_part0.py` and have the function:
+
+```
+def double_number(mynum):
+    return mynum+2
+```
+
+Running the file will not do anything - it is creating the function, but there is no code to call it, so nothing will actually run.
+
+We need to add code to call the function, choosing some suitable test arguments:
+
+```
+def double_number(mynum):
+    return mynum+2
+
+# test using function call
+result = double_number(2)
+print(result)
+```
+
+Add the test code to `w4_part0.py` and check the function works. 
+
+There is a problem with this function (hint. it should do what its name suggests). 
+
+Fix the bug and add two more test calls to demonstrate it works for 2 different input values.
+
+---
 
 ### Part 1: Say Hi
 
-*If you are working in CodeSpaces work in file **`5b_part1.py`***
+*Work in file **`w4_part1.py`***
 
 Write a Python function called `say_hi` that takes one argument `n`.
 
@@ -40,11 +65,9 @@ hi
 hi
 ```
 
----
-
 ### Part 2: Calculating a percentage change
 
-*If you are working in CodeSpaces work in file **`5b_part2.py`***
+*Work in file **`w4_part2.py`***
 
 A programmer wants to write code to calculate the percentage change between two values `a` and `b`.
 
@@ -58,23 +81,20 @@ After writing your code add the following code lines to test it.
 
 ```python
 check_a = percent_change(50,55)
+print(f"Percent change from 50 to 55 is {check_a}%")
+
 check_b = percent_change(50,25)
-
-print(check_a, check_b)
+print(f"Percent change from 50 to 25 is {check_b}%")
 ```
 
-The output should be 
-
-```
-10.0 -50.0
-```
+The values shown should be 10.0% and -50.0%.
 
 ---
 
 
 ### Part 3: Validating an age variable
 
-*If you are working in CodeSpaces work in file **`5b_part3.py`***
+*Work in file **`w4_part3.py`***
 
 A programmer wants to write code to validate that a provide age is sensible.
 
@@ -99,24 +119,33 @@ After writing your code add the following code lines to test it.
 
 ```python
 check_minus = validate(-5)
+print(f"Check -5 returned: {check_minus}")
+
 check_20 = validate(20)
+print(f"Check 20 returned: {check_20}")
+
 check_150 = validate(150)
+print(f"Check 150 returned: {check_150}")
+
 check_non_int = validate(7.2)
-
-print(check_minus, check_20, check_150, check_non_int)
+print(f"Check 7.2 returned: {check_non_int}")
 ```
 
-The output should be:
+Check the output is as expected.
+
+Can you improve the test code, so it will take a list:
 
 ```
-failed passed failed failed
+test_vals = [-5, 20, 150, 7.2]
 ```
+
+Then carry out the check for each value in the list, giving output as above.
 
 ---
 
 ### Part 4: Finding the net change over a series
 
-*If you are working in CodeSpaces work in file **`5b_part4.py`***
+*Work in file **`w4_part4.py`***
 
 A programmer wants to write code to calculate the net change between the start and end of a timeseries.
 
@@ -145,20 +174,17 @@ series1 = [ 1, 0, 2, 4 ]
 series2 = [ 10, 0, 2 ]
 
 check_series1 = net_change(series1)
+print("Change over series: {series1} is {check_series1}")
+
 check_series2 = net_change(series2)
-
-print(check_series1, check_series2)
+print("Change over series: {series2} is {check_series2}")
 ```
 
-This should produce the following output:
-
-```
-3 -8
-```
+The changes returned by the function should be 3 and -8 for the two test series.
 
 ### Part 5: Generating a set of sequences
 
-*If you are working in CodeSpaces work in file **`5b_part5.py`***
+*Work in file **`w4_part5.py`***
 
 A programmer is writing code to explore a mathematical sequence.
 
@@ -185,7 +211,9 @@ list1 = [ 2, 3 ]
 list2 = grow_list(list1)
 list3 = grow_list(list2)
 
-print(list1, list2, list3)
+print(list1)
+print(list2)
+print(list3)
 ```
 
 This should produce the output:
@@ -194,11 +222,16 @@ This should produce the output:
 [2, 3] [2, 3, 6] [2, 3, 6, 18]
 ```
 
-Hint. to make a copy of a list you can use either code like:
+Hint. Lists are mutable objects and when passed as a function argument, can be changed by function code.
+
+To avoid changing the original copy you can make a copy of a list using code like:
 
 ```python
 mylist = [1,2,3]
+# option 1
 mylist_copy1 = mylist.copy()
+
+# option 2 (uses slice operator)
 mylist_copy2 = mylist[:]
 ```
 
@@ -206,16 +239,12 @@ mylist_copy2 = mylist[:]
 
 ### Submitting your work
 
-Run the following lines in the terminal to stage, commit and push your code back to your GitHub repository:
+Use the following command to build a zip of the work you completed in the workshop. 
+
+You will see the created file in the file panel. 
+
+Right click on the zip file to download a copy to your computer.
 
 ```
-git add .
-git commit -m "completed 5b"
-git push
-```
-
-To check your work has been saved you can run the line of code below in the terminal to get the web address of the repository in GitHub. Goto the repository and check the completed code files are stored.
-
-```
-git config --get remote.origin.url
+git_helper --zip
 ```
